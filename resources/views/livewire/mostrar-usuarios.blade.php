@@ -4,7 +4,11 @@
             @forelse ($usuarios as $usuario)
             <div>
                 <a href="{{route('posts.index', $usuario->username)}}" class="flex flex-col items-center gap-2">
-                    <img class=" rounded-full w-4/5" src="{{ asset('perfiles') . '/' . $usuario->imagen }}" alt="">
+                    @if ($usuario->imagen)
+                        <img class=" rounded-full w-4/5" src="{{ asset('perfiles') . '/' . $usuario->imagen }}" alt="Imagen perfil">
+                    @else
+                        <img class=" rounded-full w-4/5" src="{{asset('img/usuario.svg')}}" alt="Imagen usuario">
+                    @endif
                     <p class="font-bold text-xs">{{$usuario->username}}</p>
                 </a>  
             </div>
