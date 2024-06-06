@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.no-scrollbar {
+    scrollbar-width: none;
+    -webkit-scrollbar-width: none;
+  }
